@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Set the title of the document -->
+    <title>Restaurantista</title>
+    <!-- Link the payment.css stylesheet -->
+    <link rel="stylesheet" href="payment.css">
+    <!-- Specify the rendering engine and compatibility mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the viewport properties for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<!-- Placeholder for the header -->
+	<div id="header-placeholder"></div>
+	
+    <!-- Payment form -->
+    <form id="payment-form" autocomplete="on">
+      <!-- Input field for the name on the card -->
+      <label for="name">Name on card:</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Input field for the card number with a pattern for 13 to 16 digits -->
+      <label for="card-number">Card number</label>
+      <input type="text" id="card-number" name="card-number" pattern="[0-9]{13,16}" required>
+
+      <!-- Input field for the CVC with a pattern for 3 to 4 digits -->
+      <label for="cvc">CVC:</label>
+      <input type="number" id="cvc" name="cvc" pattern="[0-9]{3,4}" required>
+
+      <!-- Input field for the expiration date with a placeholder for MM/YY -->
+      <label for="expiration-date">Expiration date</label>
+      <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+
+      <!-- Button to submit the payment form -->
+      <button type="submit" id="pay-button">Pay</button>
+    </form>
+
+    <!-- Success message div initially hidden -->
+    <div id="success-message" style="display: none;">
+        <p>
+            Thank you for your payment. Your order will be delivered within 1 hour.
+        </p>
+    </div>
+	
+	<!-- Placeholder for the footer -->
+	<div id="footer-placeholder"></div>
+</body>
+<!-- Include the payment.js and template.js scripts -->
+<script src="payment.js"></script>
+<script src="template.js"></script>
+</html>
